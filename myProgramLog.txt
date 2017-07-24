@@ -1,0 +1,4 @@
+2017-07-10 15:24:44,436 - DEBUG - Starting new HTTP connection (1): inetproxy.stp.mrll.com
+2017-07-10 15:24:45,671 - DEBUG - http://inetproxy.stp.mrll.com:80 "GET http://musicbrainz.org/ws/2/artist/?query=artist%3ANirvana&fmt=json HTTP/1.1" 200 None
+2017-07-10 15:24:45,938 - DEBUG - Starting new HTTP connection (1): inetproxy.stp.mrll.com
+2017-07-10 15:24:46,879 - DEBUG - http://inetproxy.stp.mrll.com:80 "GET http://musicbrainz.org/ws/2/artist/9282c8b4-ca0b-4c6b-b7e3-4f7762dfc4d6?inc=releases&fmt=json HTTP/1.1" 200 None
