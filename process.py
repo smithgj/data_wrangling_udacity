@@ -72,10 +72,7 @@ def process_file(f):
 
     data = []
     info = {}
-    my_keys = ["courier","airport","year","month","flights"]
-    my_vals=[]
-    my_flight_keys = ["domestic","international"]
-    my_flight_vals=[]
+    my_dict = {}
     info["courier"], info["airport"] = f[:6].split("-")
     # Note: create a new dictionary for each entry in the output data list.
     # If you use the info dictionary defined here each element in the list
@@ -87,20 +84,18 @@ def process_file(f):
             # for tabledata in row.find_all('td'):
             #     print(tabledata.text)
             tabledata = row.find_all('td')
-            if (tabledata[1].text != "TOTAL"):
-            # flights={}
-            # flights['domestic'] = tabledata[2].text
-            # flights['international'] = tabledata[3].text
-            # my_dict["courier"] = info["courier"]
-            # my_dict["airport"] = info["airport"]
-            # my_dict["year"] = tabledata[0].text
-            # my_dict["month"] = tabledata[1].text
-            # my_dict["flights"] = flights
-                my_flight_vals = [int(tabledata[2].text.replace(',', '')), int(tabledata[3].text.replace(',', '')) ]
-                my_vals = [info["courier"], info["airport"], int(tabledata[0].text), int(tabledata[1].text), dict(zip(my_flight_keys, my_flight_vals)) ]
-                data.append(dict(zip(my_keys, my_vals)))
+            # if (tabledata[1].text != "TOTAL"):
+            flights={}
+            flights['domestic'] = tabledata[2].text
+            flights['international'] = tabledata[3].text
+            my_dict["courier"] = info["courier"]
+            my_dict["airport"] = info["airport"]
+            my_dict["year"] = tabledata[0].text
+            my_dict["month"] = tabledata[1].text
+            my_dict["flights"] = flights
+            data.append(my_dict)
 
-    # print(data)
+    print(data)
     return data
 
 
